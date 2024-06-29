@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasearch-Recommendation-paper-system</title>
+    <style>
+        
+         body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #eff7ff;
+            color: #333;
+            overflow: hidden;
+        } 
+
+        
+        .top {
+            background-color: #0d0e0e; /* Green */
+            color: rgb(35, 32, 32);
+            padding: 20px 0;
+        }
+
+        .top h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgb(17, 16, 16);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Headings */
+        h1 {
+            color: #35dc83; /* Red */
+        }
+
+        h2 {
+            color: #35dc83; /* Dark grey */
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #35dc83; /* Red */
+            
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            color: #fff;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            background-color: #3d1be3; /* Red */
+            border: 1px solid #4035dc;
+            padding: 0.375rem 0.75rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        /* List styles */
+        .list-group {
+            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            color: #161515;
+        }
+
+        .list-group-item:hover {
+            background-color: #d4edda;
+        }
+
+        /* Utility classes */
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+
+        .mt-5 {
+            margin-top: 2rem;
+
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <h1 class="mt-4 text-center">Top Recommendation For Research Papers</h1>
+        </div>
+        <div class="container mt-5">
+            <h1 class="mb-4 text-center">Research papers Recommendation</h1>
+        <form action='/recommend' method="post">
+            <div class="form-group">
+                <label for="paper_title">Enter Paper Title:</label>
+                <input type="text" class="form-control" id="paper_title" name="paper_title">
+
+            </div>
+            <button type="submit" class="btn btn-pimary">Recommend</button>
+        </form>
+        {% if recommended_papers %}
+        <h2 class="mt-5">Recommended Papers:</h2>
+        <ul class="list-group">
+            {% for paper in recommended_papers %}
+            <li class="list-group-item">{{ paper }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
