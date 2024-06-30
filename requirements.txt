@@ -8,3 +8,4 @@ werkzeug==2.1.2
 torch==2.3.1
 sentence_transformers==3.0.1
 pandas
+tf-keras
