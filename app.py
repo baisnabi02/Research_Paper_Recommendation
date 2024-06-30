@@ -2,7 +2,7 @@ import torch
 from sentence_transformers import SentenceTransformer, util
 import pickle
 import numpy as np
-from tf_keras import keras
+from tensorflow import keras
 from flask import Flask, request, render_template
 app = Flask(__name__)
 
