@@ -11,14 +11,20 @@
 
  Features:
  1.Takes the title of a research paper as input and provides the top 5 related papers.
+ 
  2.Utilizes the ArXiv dataset for training and testing.
+ 
  3.Includes a user-friendly frontend built with HTML and CSS.
+ 
  4.Developed a Flask web application running on a local server.
  
  Technologies Used:
  1.NLP Model: all-MiniLM-L6-v2 (Sentence Transformers)
+ 
  2.Dataset: ArXiv research papers
+ 
  3.Frontend: HTML, CSS
+ 
  4.Backend: Flask (Python)
 
  
